@@ -1,0 +1,31 @@
+会员模块主要提供会员中心与会员相关的所有http接口
+
+以下具体介绍有哪一些接口及接口的相应逻辑
+
+#会员收藏
+
+接口调用：http://192.168.220.58/tomtopweb/member/wikis/memberbase-interface-doc#9
+
+逻辑:
+     添加收藏之前需要判定此产品是否已经收藏
+
+     删除之前需要确认此收藏是否属于此会员的
+
+#会员评论
+
+接口调用： http://192.168.220.58/tomtopweb/member/wikis/memberbase-interface-doc#4
+
+逻辑:
+     删除、修改状态为未审核时才能操作  审核状态(0未审、1通过、2未通过)
+
+#修改密码By旧密码
+
+接口调用： http://192.168.220.58/tomtopweb/member/wikis/login-reg-password#10
+
+逻辑:
+
+    会员必须存在，旧密码必须正确，新密码两次输入必须一致
+ 
+
+
+

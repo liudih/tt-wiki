@@ -1,0 +1,286 @@
+
+http://logistics.api.tomtop.com
+
+
+物流计算接口
+地址：{域名}/shipping/code
+
+入参：
+{
+    "country":"US",
+    "weight":2,
+    "storageId":1,
+    "shippingTypeId":1
+}
+
+
+返回结果：
+
+{
+    "data":[
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":2.19,
+            "shippingCode":"TG",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        },
+        {
+            "country":"US",
+            "price":0.03,
+            "shippingCode":"MP",
+            "shippingTypeId":1,
+            "storageNameId":1
+        }
+    ],
+    "status":"Y"
+}
+
+
+
+
+
+物流接口
+
+例子：${website}/shipping 入参:head中需要添加 token ，uat传值为test
+
+{
+    "country":"US",
+    "currency":"USD",
+    "language":1,
+    "storageId":1,
+    "totalPrice":13,
+    "shippingCalculateLessParamBase":[
+        {
+            "listingId":"c67291eb-8dba-4f8e-b291-eb8dba0f8e78",
+            "qty":1
+        }
+    ]
+}
+返回值：
+
+{
+    "data":[
+        {
+            "description":"Airmail without tracking code",
+            "errorCode":"101",
+            "errorDescription":"不可用",
+            "id":0,
+            "isShow":false,
+            "isStrack":false,
+            "order":1,
+            "title":"Regular Mail",
+            "type":"SurfaceType"
+        },
+        {
+            "description":"Airmail with tracking code",
+            "errorCode":"001",
+            "errorDescription":"",
+            "id":0,
+            "isShow":false,
+            "isStrack":false,
+            "order":2,
+            "title":"Registered Mail",
+            "type":"RegistType"
+        },
+        {
+            "description":"5-12 working days delivery",
+            "errorCode":"001",
+            "errorDescription":"",
+            "id":0,
+            "isShow":false,
+            "isStrack":false,
+            "order":3,
+            "title":"Express Shipping",
+            "type":"ExpressType"
+        },
+        {
+            "code":"DHK",
+            "description":"3-5 working days delivery",
+            "id":23069,
+            "isShow":true,
+            "isStrack":false,
+            "order":4,
+            "price":15.95,
+            "title":"Expedited Shipping",
+            "type":"SpecialType"
+        }
+    ],
+    "status":"Y"
+}
+
+data值补充
+
+有关errorCode：当对应SKU配置了相应的物流模板时（比如平邮和挂号），如果平邮不满足发货要求，就会出现errorCode编码和描述，并且平邮的isShow参数为false，产品应该置灰，同时挂号如果有对应的物流，则errorCode和errorDescription会为空，不会展示出来
+  
+返回实体类型（实体类型包含属性一样 注意：如果计算后，不显示的项，结果集中不会返回相应json【fastjson转换为属性空的记录，不会展示】）：
+
+surfaceResult :平邮
+
+registResult：挂号
+
+expressResult:快递
+
+specialResult:特快
+
+清理缓存方法（均为get请求方式）：
+
+1>清理模板缓存 {域名}/clean/templateCache
+
+2>清理汇率计算{域名}/clean/exchangeCache
+
+3>清理产品参数{域名}/clean/productBaseCache
+
+4>系统参数配置缓存{域名}/clean/systemParamsCache
+
+补充：上面接口是物流缓存系统参数配置项，改数据库的话，还需要清理base.api.tomtop.com/cache/v1/clean/parameter 
+
+
+
+
+
+
+批量接口：
+例子：${website}/shipping/multi     入参:head中需要添加 token ，uat传值为test
+
+入参：
+[
+    {
+        "id":"123",
+        "shipingItem":{
+            "country":"US",
+            "currency":"USD",
+            "language":1,
+            "storageId":1,
+            "totalPrice":13,
+            "shippingCalculateLessParamBase":[
+                {
+                    "listingId":"dd2e63d9-eb5d-4e6b-ae63-d9eb5dee6bf7",
+                    "qty":1,
+                    "chrd":[
+                        "df064d34-8f72-4b47-864d-348f72cb47ca"
+                    ]
+                }
+            ]
+        }
+    }
+]
+
+
+返回结果：
+[
+    {
+        "shipingItem":{
+            "data":[
+                {
+                    "description":"Airmail without tracking code",
+                    "errorCode":"101",
+                    "errorDescription":"Some products can not use regular mail",
+                    "id":0,
+                    "isShow":false,
+                    "isStrack":false,
+                    "order":1,
+                    "title":"Regular Mail",
+                    "type":"SurfaceType"
+                },
+                {
+                    "description":"Airmail with tracking code",
+                    "errorCode":"001",
+                    "errorDescription":"Selected country / region can not be reached",
+                    "id":0,
+                    "isShow":false,
+                    "isStrack":false,
+                    "order":2,
+                    "title":"Registered Mail",
+                    "type":"RegistType"
+                },
+                {
+                    "description":"5-12 working days delivery",
+                    "errorCode":"001",
+                    "errorDescription":"Selected country / region can not be reached",
+                    "id":0,
+                    "isShow":false,
+                    "isStrack":false,
+                    "order":3,
+                    "title":"Express Shipping",
+                    "type":"ExpressType"
+                },
+                {
+                    "code":"DHK",
+                    "description":"3-5 working days delivery",
+                    "id":23069,
+                    "isShow":true,
+                    "isStrack":false,
+                    "order":4,
+                    "price":15.95,
+                    "title":"Expedited Shipping",
+                    "type":"SpecialType"
+                }
+            ],
+            "status":"Y"
+        },
+        "id":"123"
+    }
+]
+
+©2014 Json.cn All right reserved. 京ICP备15025187号-1
+
+通过发货代码和语言获取物流名称：
+
+例子：${website}/shipping/DHKG/name?languageid=1     入参:head中需要添加 token ，uat传值为test  ，“DHKG”为发货代码
+
+返回参数：
+
+{
+    "data":{
+        "description":"By special Express,with tracking numbe",
+        "languageId":1,
+        "shippingTypeId":4,
+        "title":"SpecialType"
+    },
+    "status":"Y"
+}
+
+补充：错误信息时，status可能为N或者E，msg字段会标识出错原因;status为Y的时候，有可能data为空，找不到对应数据（比如code人为改动过）

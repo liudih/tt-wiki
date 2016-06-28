@@ -1,0 +1,89 @@
+刘鑫
+=======
+http://www.tomtop.com/product/dailydeal 点进去没有产品
+
+刘迪
+=======
+
+* 修改了订阅页面的js提示，
+* 隐藏了头部和下拉列表的special链接
+* 修改了hot页面类目选择区域
+* 修改了badge的免邮icon显示规则
+* 换了addthis分享插件
+* 修改了评论列表页的分页，面包屑
+
+
+肖成富
+=======
+* http://www.tomtop.com/img/images/edm/umi-hammer.html 页面底部 还是用的旧网站的链接，没有动态从数据库， 点击后全是404  
+http://www.tomtop.com/interaction/superdeals  界面  buynow 按钮 有问题， 点击是查看详细。  
+未搜索到产品时 建议只出现一行小字就行“Sorry, No Products Found!”。  
+http://www.tomtop.com/product/hot 首页图标未链接， 点击品类时未选中及点击后别的品类消失  
+购物车里面的标题建议也添加查看产品详细  
+产品详细转换语言时应该还是留在本页面，不应该跳到首页   
+评论条数跟搜索出来的产品描述不一致  搜索usb出现http://www.tomtop.com/mini-150m-usb-wifi-wireless-lan-802-11-n-g-b-adapter-with-antenna-c1289.html  这个产品是7条，进去后只有2条  
+http://www.tomtop.com/review/product/009b3dc6-d914-1004-874c-d371c9ab96c0  点击查看评论后分页的样式乱了  
+
+
+冯瑶 
+=======
+* 首页象新品，superdeals展示会从搜索引擎取出相同SPU的多个listingID                                  
+* 首页展示同一个产品次数太多，在superdeals，featuredItems，hotsales各个小项都有，这些展示项应该展示更多的SPU (http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/b740195a2d/%E5%95%86%E5%93%81%E5%B1%95%E7%A4%BA.png)
+* 详情页上传视频url后无法显示视频
+* 在橱窗图看到的商品评论数和商品详情页的评论数对应不上http://www.tomtop.com/300mbps-usb-wireless-adapter-wifi-network-lan-card-c1167.html
+* 搜索引擎中，如果某spu的主sku被下架，会造成搜索引擎取不到数据。
+             
+
+
+肖昌辉   
+=======  
+* 商品详情的缩略图文字信息没有时 显示“null” 例如：http://www.tomtop.com/Sexy-Women-Lady-Crop-Top-Backless-34-Sleeve-Short-Tops-Clubwear-TShirt-Black-G0354B-S.html        
+
+
+李军
+=======                                                          
+* 购物车目前不能单独买某一个商品，或者某几个商品![商品展示]   提出人：李军
+* 搜索的时候，没有商品，下面的分页中的页数显示1，应该显示为0
+* 在商品详情页的最下面的 Product Q&A -> 任何的按钮  点击进去 ，会出现破图的bug
+* 在商品详情页中 点击 share this 弹出的框没有 close 按钮，点击 email 弹出的框右上角就有close按钮
+* ![QQ图片20150501113834](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/e473df67b1/QQ%E5%9B%BE%E7%89%8720150501113834.jpg)
+没有输入验证码也不会提示
+
+*![QQ图片20150501115746](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/1b1731b048/QQ%E5%9B%BE%E7%89%8720150501115746.jpg)
+
+
+
+* Español 语言下 发推  发不了
+![QQ图片20150501121708](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/253be8c813/QQ%E5%9B%BE%E7%89%8720150501121708.jpg)
+
+
+林浩伦 
+==============
+http://www.tomtop.com/collections/
+点击选择框 没有任何反映，或提示
+
+陈晓忠
+==============
+http://www.tomtop.com/Antiradiation-Air-Tube-Stereo-Headset-Monaural-In-Ear-MIC-Headphones-with-Earbud-for-iPhone-Samsung-Xiaomi-MP3-Tablet-PC-PA1997.html   图片上多了个null字段
+![(5V$D93T%FXWOWTAWI(~R7B](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/d2adb5b9b4/_5V_D93T_FXWOWTAWI__R7B.jpg)
+
+
+林浩伦
+==============
+图片不显示
+![QQ图片20150501113343](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/7864cce950/QQ%E5%9B%BE%E7%89%8720150501113343.jpg)
+林浩伦
+=======================
+图片alt值为null
+![3](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/aae966e30d/3.png)
+![2](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/01a4328132/2.png)
+
+李佳
+=======
+商品详情页有视频连接但无图片,图片无src
+http://www.tomtop.com/4gb-swimming-diving-water-waterproof-mp3-player-fm-radio-earphone-black-v397b.html
+![MY](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/8d022f21d1/MY_CKO__MQ_MZX0WZI_PDWG.jpg)
+
+使用积分付款时,积分被锁定三次,导致重复扣除用户积分
+
+![intergral](http://192.168.7.15:10080/uploads/tomtopwebsite/tomtopwebsite/363bce7169/intergral.jpg)

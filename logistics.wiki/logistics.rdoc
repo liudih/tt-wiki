@@ -1,0 +1,40 @@
+物流接口
+
+http://logistics.api.tomtop.com
+
+例子：${website}/shipping
+入参:head中需要添加 token  ，uat传值为test
+
+{
+    "country":"US",
+    "currency":"USD",
+    "language":1,
+    "storageId":1,
+    "totalPrice":13,
+    "shippingCalculateLessParamBase":[
+        {
+            "listingId":"dd2e63d9-eb5d-4e6b-ae63-d9eb5dee6bf7",
+            "qty":1,
+            "chrd":[
+                "df064d34-8f72-4b47-864d-348f72cb47ca"
+            ]
+        }
+    ]
+}
+
+返回值：
+{
+    "data":[
+        {
+            "code":"SGD",
+            "description":"By UPS Express,with tracking numbe",
+            "id":26301,
+            "isStrack":false,
+            "order":4,
+            "price":12.92,
+            "title":"ExpressType",
+            "type":"ExpressType"
+        }
+    ],
+    "status":"Y"
+}
